@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User with account</title>
+  </head>
+  <body>
+    <form action="/login" method="POST">
+      <!-- Form Elements Goes here -->
+
+      <!-- Text Input -->
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter Your Name" required />
+      <br />
+      <!-- Password Input -->
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Enter Your Password" required />
+      <br />
+      <!-- Radio Buttons -->
+      <label>Login As:</label><br />
+      <input type="radio" id="student" name="user_type" value="student" required />
+      <label for="student">Student</label><br />
+      <input type="radio" id="patron" name="user_type" value="patron" required />
+      <label for="patron">Patron</label>
+      <br />
+      <br />
+
+      <!-- Submit Button -->
+      <button type="submit">Submit</button>
+
+      <!-- Link to Create Account Page -->
+      <p>Don't have an account? <a href="/create_account">Create one here</a>.</p>
+    </form>
+  </body>
+</html>

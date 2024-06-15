@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&family=Poppins:wght@200&display=swap"
+  />
+  <title>Content</title>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="flex items-center justify-between">
+        <div class="left flex justify-right">
+          <div class="logo">
+            <img src="./images/logo.png" width="50px" alt="logo">
+          </div>
+          <div>
+            <a href="login.html">Sign out</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="hero flex items-center justify-between">
+    <div class="left flex-1 justify-center">
+      <img src="./images/main-image.jpeg" alt="Profile">
+    </div>
+    <div class="right flex-1">
+      <h6>name</h6>
+      <h1><br>A space you belong<br></h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque
+        illum nam nobis, minima laudantium fugit sequi nostrum quod impedit,
+        beatae necessitatibus praesentium optio labore nemo!
+      </p>
+      <div id="app">
+        <header>
+          <h1>University Clubs</h1>
+        </header>
+        <main>
+          <section class="search-section">
+            <h2>Find Your Club</h2>
+            <form id="searchForm">
+              <input type="text" id="searchInput" name="query" placeholder="Search for clubs...">
+              <button type="submit">Search</button>
+            </form>
+          </section>
+          <section id="results" class="results-section">
+            <!-- Search results will be displayed here -->
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+  <section class="about">
+    <div class="container flex items-center">
+      <div class="left flex-1 justify-right">
+        <img src="./images/man2.jpeg" height="400px" alt="profile pic">
+      </div>
+    </div>
+  </section>
+  <script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent the form from submitting normally
+      
+      const query = document.getElementById('searchInput').value;
+      
+      // Assuming a simple static dataset of clubs for demonstration
+      const clubs = [
+        { name: 'Tech Club', description: 'A club for tech enthusiasts' },
+        { name: 'Sports Club', description: 'A club for sports lovers' },
+        { name: 'Diplomacy Club', description: 'A club for diplomacy and international relations' },
+        { name: 'Environment Club', description: 'A club for environment awareness' },
+        { name: 'Literature Club', description: 'A club for literature lovers' }
+      ];
+
+      // Filter clubs based on the search query
+      const results = clubs.filter(club => club.name.toLowerCase().includes(query.toLowerCase()));
+
+      // Display the results
+      const resultsSection = document.getElementById('results');
+      resultsSection.innerHTML = ''; // Clear previous results
+
+      if (results.length > 0) {
+        results.forEach(club => {
+          const clubElement = document.createElement('div');
+          clubElement.classList.add('club-result');
+          clubElement.innerHTML = `<h3>${club.name}</h3><p>${club.description}</p>`;
+          resultsSection.appendChild(clubElement);
+        });
+      } else {
+        resultsSection.innerHTML = '<p>No clubs found</p>';
+      }
+    });
+  </script>
+</body>
+</html>
