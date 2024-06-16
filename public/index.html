@@ -16,6 +16,10 @@
   <header>
     <div class="container">
       <nav class="flex items-center justify-between">
+        <div class="hero flex items-center justify-between">
+          <div class="left flex-1 justify-center">
+            <img src="./images/main-image.jpeg" alt="Profile">
+          </div>
         <div class="left flex justify-right">
           <div class="logo">
             <img src="./images/logo.png" width="50px" alt="logo">
@@ -27,10 +31,6 @@
       </nav>
     </div>
   </header>
-  <div class="hero flex items-center justify-between">
-    <div class="left flex-1 justify-center">
-      <img src="./images/main-image.jpeg" alt="Profile">
-    </div>
     <div class="right flex-1">
       <h6>name</h6>
       <h1><br>A space you belong<br></h1>
@@ -58,13 +58,6 @@
       </div>
     </div>
   </div>
-  <section class="about">
-    <div class="container flex items-center">
-      <div class="left flex-1 justify-right">
-        <img src="./images/man2.jpeg" height="400px" alt="profile pic">
-      </div>
-    </div>
-  </section>
   <script>
     document.getElementById('searchForm').addEventListener('submit', function(e) {
       e.preventDefault(); // Prevent the form from submitting normally
@@ -87,7 +80,7 @@
       const resultsSection = document.getElementById('results');
       resultsSection.innerHTML = ''; // Clear previous results
 
-      if (results.length > 0) {
+      if (results.length  > 0) {
         results.forEach(club => {
           const clubElement = document.createElement('div');
           clubElement.classList.add('club-result');

@@ -17,11 +17,11 @@ app.get('/login', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-  const { name, password, user_type } = req.body;
-  console.log(`Name: ${name}, Password: ${password}, User Type: ${user_type}`);
-  // Add your login logic here
-  res.send(`Logged in as ${user_type}`);
-});
+    const { name, password, user_type } = req.body;
+    console.log(`Name: ${name}, Password: ${password}, User Type: ${user_type}`);
+    // Add your login logic here
+    res.redirect('/'); // Redirect to the index page after successful login
+  });
 
 // Route for the create account form
 app.get('/create_account', (req, res) => {
@@ -29,12 +29,12 @@ app.get('/create_account', (req, res) => {
 });
 
 app.post('/create_account', (req, res) => {
-  const { name, email, phone, interest, password } = req.body;
-  console.log(`Name: ${name}, Email: ${email}, Phone: ${phone}, Interest: ${interest}, Password: ${password}`);
-  // Add your account creation logic here
-  res.send('Account created successfully');
-});
-
+    const { name, email, phone, interest, password } = req.body;
+    console.log(`Name: ${name}, Email: ${email}, Phone: ${phone}, Interest: ${interest}, Password: ${password}`);
+    // Add your account creation logic here
+    res.redirect('/login'); // Redirect to the login page after successful account creation
+  });
+  
 // Route for the index page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
