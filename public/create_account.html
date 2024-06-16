@@ -4,11 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Create Account</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 600px;
+      height: 90vh;
+      overflow-y: auto;
+    }
+    fieldset {
+      border: none;
+      padding: 0;
+    }
+    legend {
+      font-weight: bold;
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    input[type="text"], input[type="email"], input[type="tel"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    input[type="checkbox"] {
+      margin-right: 10px;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    .checkbox-group label {
+      width: 45%;
+      margin-bottom: 10px;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+    #password-help {
+      font-size: 12px;
+      color: #666;
+    }
+  </style>
 </head>
 <body>
   <form action="/create_account" method="POST">
-    <!-- Form Elements Goes here -->
-    <!-- Fieldset and Legend -->
     <fieldset>
       <legend>Personal Information</legend>
       <label for="name">Name:</label>
@@ -22,18 +88,26 @@
       <br>
     </fieldset>
     <br>
-    <!-- Checkboxes -->
-    <label>Check Your Preferred Interest:</label> <br>
-    <input type="checkbox" id="tech" name="interest" value="tech">
-    <label for="tech">Tech</label> <br>
-    <input type="checkbox" id="sports" name="interest" value="sports">
-    <label for="sports">Sports</label> <br>
-    <input type="checkbox" id="diplomacy" name="interest" value="diplomacy">
-    <label for="diplomacy">Diplomacy</label> <br>
-    <input type="checkbox" id="environment" name="interest" value="environment">
-    <label for="environment">Environment</label>
+    <label>Check Your Preferred Interest:</label>
+    <div class="checkbox-group">
+      <label for="tech">
+        <input type="checkbox" id="tech" name="interest" value="tech">
+        Tech
+      </label>
+      <label for="sports">
+        <input type="checkbox" id="sports" name="interest" value="sports">
+        Sports
+      </label>
+      <label for="diplomacy">
+        <input type="checkbox" id="diplomacy" name="interest" value="diplomacy">
+        Diplomacy
+      </label>
+      <label for="environment">
+        <input type="checkbox" id="environment" name="interest" value="environment">
+        Environment
+      </label>
+    </div>
     <br><br>
-    <!-- Password Input -->
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" placeholder="Enter Your Password" required>
     <br>
@@ -43,7 +117,6 @@
     <div id="password-help">
       <p>Your password must be at least 8 characters long.</p>
     </div>
-    <!-- Submit Button -->
     <button type="submit">Submit</button>
   </form>
 </body>
