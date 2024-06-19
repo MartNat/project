@@ -1,52 +1,51 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
-
 const app = express();
 const port = 3000;
 
 // Middleware to parse URL-encoded data (for forms)
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from the public directory
+// Serve static files (CSS, JS, images)
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Route for the login form
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-app.post('/login', (req, res) => {
-    const { name, password, user_type } = req.body;
-    console.log(`Name: ${name}, Password: ${password}, User Type: ${user_type}`);
-    // Add your login logic here
-    res.redirect('/'); // Redirect to the index page after successful login
-  });
-
-// Route for the create account form
-app.get('/create_account', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'create_account.html'));
-});
-
-app.post('/create_account', (req, res) => {
-    const { name, email, phone, interest, password } = req.body;
-    console.log(`Name: ${name}, Email: ${email}, Phone: ${phone}, Interest: ${interest}, Password: ${password}`);
-    // Add your account creation logic here
-    res.redirect('/login'); // Redirect to the login page after successful account creation
-  });
-  
-// Route for the index page
+// Route for the main page
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Search route (this can be expanded to search a database or other data source)
+// Route for the login page
+app.get('/login', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'login.html'));
+});
+
+// Route for handling login form submission
+app.post('/login', (req, res) => {
+  const { email, password } = req.body;
+  console.log(`Email: ${email}, Password: ${password}`);
+  
+  // Add your login logic here
+  // For simplicity, assuming the login is always successful
+  res.redirect('/'); // Redirect to the main page after successful login
+});
+
+/*Route for handling account creation form submission
+app.post('/create_account', (req, res) => {
+  const { name, email, password } = req.body;
+  console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
+  
+  // Add your account creation logic here
+  // For simplicity, assuming the account creation is always successful
+  res.redirect('/login'); // Redirect to the login page after account creation
+});*/
+
+// Search route
 app.post('/search', (req, res) => {
   const { query } = req.body;
   console.log(`Search query: ${query}`);
+  
   // Add your search logic here
-  const searchResults = [`Result 1 for ${query}`, `Result 2 for ${query}`];
-  res.json({ results: searchResults });
+  res.json({ results: [`Result 1 for ${query}`, `Result 2 for ${query}`] });
 });
 
 app.listen(port, () => {

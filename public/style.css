@@ -1,0 +1,192 @@
+/* Global Styles */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-color: #f4f4f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Header Styles */
+
+header {
+  background-color: white;
+  padding: 10px 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  margin-right: 20px;
+}
+
+header .logo img {
+  width: 50px;
+}
+
+header .nav-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header .nav-right a {
+  margin-left: 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Hero Styles */
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.hero .left {
+  flex: 1;
+  justify-content: center;
+}
+
+.hero .left img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hero .right {
+  flex: 1;
+  justify-content: center;
+  padding: 20px;
+}
+
+.hero .right h1 {
+  margin: 0;
+  color: #333;
+}
+
+.hero .right p {
+  color: #666;
+  font-size: 1.2em;
+}
+
+/* Form Styles */
+
+form {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Search Styles */
+
+.search-section {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.search-section h2 {
+  margin: 0;
+  color: #333;
+}
+
+.search-section input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-section button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.search-section button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* Results Styles */
+
+.results-section {
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.results-section .club-result {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.results-section .club-result h3 {
+  margin: 0;
+  color: #333;
+}
+
+.results-section .club-result p {
+  color: #666;
+  font-size: 1.2em
+}
