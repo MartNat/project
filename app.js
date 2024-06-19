@@ -23,7 +23,7 @@ app.post('/login', (req, res) => {
   res.redirect('/index'); // Redirect to the index page after successful login
 });
 
-/* Route for the create account form
+// Route for the create account form
 app.post('/create_account', (req, res) => {
   const { name, email, password } = req.body;
   console.log(`Name: ${name}, Email: ${email}, Password: ${password}`);
@@ -31,7 +31,7 @@ app.post('/create_account', (req, res) => {
   // Add your account creation logic here
   // For simplicity, assuming the account creation is always successful
   res.redirect('/login'); // Redirect to the login page after account creation
-});*/
+});
 
 // Route for the index page
 app.get('/index', (req, res) => {
