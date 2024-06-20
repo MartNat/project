@@ -47,7 +47,7 @@ body{
 }
 
 .container button{
-    background-color: #13d420;
+    background-color: #f99500;
     color: #fff;
     font-size: 12px;
     padding: 10px 45px;
@@ -161,9 +161,9 @@ body{
 }
 
 .toggle{
-    background-color: #13d420;
+    background-color: #62eaf6;
     height: 100%;
-    background: linear-gradient(to right, #aaf87d, #13d420);
+    background: linear-gradient(to right, #0fadc9, #0bb9d7);
     color: #fff;
     position: relative;
     left: -100%;
@@ -207,4 +207,16 @@ body{
 
 .container.active .toggle-right{
     transform: translateX(200%);
-}                                          
+}  
+                                        
+.logo-container {
+    position: absolute; /* or use relative if it should be within the flow */
+    top: 20px;
+    left: 20px;
+    z-index: 1000; /* Adjust as needed */
+}
+
+.logo-container img {
+    height: 50px; /* Adjust height as per your design */
+    width: auto; /* Maintain aspect ratio */
+}
