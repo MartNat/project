@@ -71,6 +71,12 @@ nav {
   font-weight: bold;
   float: left;
 }
+.logo img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-top: 10px;
+}
 
 nav ul {
   float: right;
@@ -260,7 +266,7 @@ nav ul li a:hover {
 /* Search Styles */
 
 .search-section {
-  padding: 20px;
+  padding: 40px;
   background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
